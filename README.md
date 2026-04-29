@@ -1,75 +1,115 @@
-# React + TypeScript + Vite
+# HealthCare Pro - B2B Healthcare Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Vite](https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white)](https://typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-Currently, two official plugins are available:
+Production-ready B2B healthcare dashboard built with modern React 19, TypeScript, Tailwind CSS v4, Firebase Auth, and Recharts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 🔐 Firebase Authentication (Email/Password) with protected routes
+- 📊 Interactive Dashboard with stat cards, recent activity feed
+- 📈 Fully responsive Recharts analytics with tooltips, gradients, filters
+- 👥 Patients management with search, filter, pagination, grid/list toggle
+- 🌙 Dark mode with localStorage persistence
+- 📱 Fully responsive design (mobile-first)
+- ⚡ Smooth animations with Framer Motion
+- 🔔 Toast notifications system
+- 💾 Service Worker for offline support + welcome notification
+- 🧹 Loading skeletons, empty states, error handling
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠 Tech Stack
 
-Note: This will impact Vite dev & build performances.
+| Category | Tech |
+|----------|------|
+| Framework | React 19 + Vite |
+| Styling | Tailwind CSS v4 |
+| UI | Custom shadcn-like primitives |
+| Charts | Recharts |
+| Auth | Firebase Auth |
+| Icons | Lucide React |
+| Animations | Framer Motion |
+| TypeScript | Full type safety |
+| PWA | Service Worker |
 
-## Expanding the ESLint configuration
+## 🚀 Quick Start
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone & Install**
+```bash
+git clone <repo>
+cd healthcare-ui
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Firebase Setup** (optional for demo)
 ```
+Copy `.env.example` to `.env`
+Add your Firebase config (apiKey, authDomain, projectId, etc.)
+```
+
+3. **Development**
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173)
+
+**Demo Login:**
+- Email: `demo@healthcare.com`
+- Password: `password123`
+
+4. **Build & Preview**
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/           # Reusable UI primitives
+│   ├── Layout.tsx    # App layout + Navbar
+│   └── ...
+├── hooks/            # Custom hooks (auth, dark mode, toast)
+├── pages/            # Route pages
+├── services/         # Mock data
+├── types/            # TypeScript interfaces
+└── lib/utils.ts      # cn() utility
+```
+
+## 🎨 Customization
+
+- **Colors**: Edit `src/index.css` `@theme` section
+- **Dark mode**: Toggle in Navbar, persists in localStorage
+- **Mock data**: `src/services/mockData.ts`
+- **Firebase**: Config in `.env`
+
+## 📱 PWA Features
+
+- Service Worker (offline support)
+- Welcome notification on activation
+- Installable on desktop/mobile
+
+## 🔍 Demo Screenshots
+
+*(Add screenshots of Dashboard, Analytics, Patients)*
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file.
+
+---
+
+⭐ **Star this repo if you found it useful!**
+
